@@ -1,0 +1,72 @@
+@-webkit-keyframes pulse {
+  30% {
+    opacity: .6
+  }
+
+  60% {
+    opacity: 0
+  }
+
+  to {
+    opacity: .6
+  }
+}
+
+@keyframes pulse {
+  30% {
+    opacity: .6
+  }
+
+  60% {
+    opacity: 0
+  }
+
+  to {
+    opacity: .6
+  }
+}
+
+#progress {
+  position: fixed;
+  z-index: 2147483647;
+  top: 0;
+  left: -6px;
+
+  width: 0%;
+  height: 2px;
+
+  background: #b91f1f;
+  border-radius: 1px;
+
+  @include transition(width 500ms ease-out, opacity 500ms linear);
+
+  &.done {
+    opacity: 0;
+  }
+
+  dd, dt {
+    position: absolute;
+    top: 0;
+    height: 2px;
+    box-shadow: #b91f1f 1px 0 6px 1px;
+    border-radius: 100%;
+  }
+
+  dd {
+    opacity: .6;
+    width: 20px;
+    right: 0;
+    clip: rect(-6px, 22px, 14px, 10px);
+  }
+
+  dt {
+    opacity: .6;
+    width: 180px;
+    right: -80px;
+    clip: rect(-6px, 90px, 14px, -6px);
+  }
+
+  &.waiting dd, &.waiting dt {
+    @include animation(pulse 2s ease-out 0s infinite);
+  }
+}

@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+@import "./include/common";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+
+  color: #2c3e50;
+  background-color: #f0f0f0;
+}
+
+::-moz-selection {
+  color: #222;
+  text-shadow: none;
+  background-color: #c8c8c8
+}
+
+::selection {
+  color: #222;
+  text-shadow: none;
+  background-color: #c8c8c8
+}
+
+#page-container {
+  height: auto;
+  min-height: 100%;
+
+  @include box-sizing(border-box);
+}
+
+#page {
+  padding-left: $base-nav-width;
+}
+
+@import "navigation";
+//@import "progress";
+@import "content";
+@import "code";
+@import "syntax";
+@import "images";
+@import "responsive";

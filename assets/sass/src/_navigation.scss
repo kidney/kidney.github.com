@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+.sidebar {
+  position: fixed;
+
+  margin-left: -#{$base-nav-width};
+  border-top: 4px solid #b91f1f;
+  padding-top: 30px;
+  width: $base-nav-width;
+  height: 100%;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background: #f8f8f8;
+
+  .brand {
+    a {
+      display: block;
+      text-indent: 20px;
+      font-size: inherit;
+      @include link-colors(#6c7077, #d90006);
+      @include transition(all 0.5s);
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .description {
+    font-size: 15px;
+    font-weight: 100;
+    text-indent: 20px;
+    color: #5d5f67;
+  }
+
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & > li {
+      margin: 10px 0;
+      text-indent: 40px;
+      font-weight: 200;
+      color: #9c9c9c;
+      @include text-shadow(1px 1px #fff);
+    }
+
+    a {
+      display: block;
+      font-size: 18px;
+      line-height: 40px;
+      @include link-colors(#999, #000);
+      @include transition(all .2s ease 0);
+
+      &:hover {
+        background: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}

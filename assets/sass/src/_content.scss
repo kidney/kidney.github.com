@@ -1,0 +1,59 @@
+
+.main-container {
+  max-width: 800px;
+
+  margin-right: auto;
+  margin-left: auto;
+  //border-top: 4px solid #b91f1f;
+  padding-top: 50px;
+  //padding: 30px 15px 0;
+
+  & > article.post {
+    padding: 50px 80px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    @include border-radius(3px);
+    @include box-shadow(0 0 0 0, 0 6px 12px rgba(#222, 0.1));
+
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .entry-meta {
+    font-size: 12px;
+    font-size: 1.2rem;
+    color: #bbb;
+    text-transform: uppercase;
+    a {
+      @include link-colors(#bbb, #bbb);
+    }
+  }
+
+  .entry-title {
+    margin: 26px 0;
+  }
+
+  .entry-content {
+    margin-bottom: 26px;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.625;
+
+    p > a {
+      border-bottom: 1px dotted #a2a2a2;
+
+      &:hover {
+        border-bottom-style:solid;
+      }
+    }
+
+    & > blockquote {
+      margin-left: -26px;
+      border-left-width: 8px;
+      font-style: italic;
+    }
+  }
+}

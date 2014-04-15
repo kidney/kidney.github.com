@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+$brand-primary: #222;
+
+$font-family-sans-serif: tahoma, arial, 'Hiragino Sans GB', 'Microsoft Yahei', \5b8b\4f53, sans-serif;
+
+$font-size-base: 12px;
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base: 1.5;
+
+$iconfont-css-prefix: 'iconfont';
+
+//** File name for all font files.
+$icon-font-name: "fontawesome-webfont";
+//** Element ID within SVG icon file.
+$icon-font-svg-id: "fontawesomeregular";
+
+$code-color: #222;
+$code-bg: #F2F2F2;
+
+$pre-color: #D0D0D0;
+$pre-bg: #272822;
+$pre-border-color: #DBDBDB;
+
+$blockquote-border-color: #bbb;
+
+$base-nav-width: 250px;

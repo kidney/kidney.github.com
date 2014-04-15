@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh">
+<head>
+{% include head.html %}
+</head>
+
+<body>
+<div id="page-container">
+    {% include browser-upgrade.html %}
+
+    <div id="page">
+        {% include navigation.html %}
+
+        <div class="main-container">
+            {{ content }}
+        </div>
+
+        {% include footer.html %}
+    </div>
+</div>
+
+</body>
+</html>

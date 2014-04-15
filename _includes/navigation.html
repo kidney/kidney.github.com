@@ -1,0 +1,16 @@
+<!-- nav -->
+<nav class="navbar navbar-default visible-xs">
+	<h1>{{ site.title }}</h1>
+</nav><!-- /.navbar -->
+
+<!-- sidebar -->
+<nav class="sidebar hidden-xs">
+    <h1 class="brand"><a href="{{ site.baseurl }}">{{ site.title }}</a></h1>
+    {% if site.description %}<h4 class="description">{{ site.description }}</h4>{% endif %}
+    <hr>
+    <ul class="menu">
+        <li><a href="./archive.html">归档</a></li>
+        <li><a href="./tag.html">标签</a></li>
+        <li><a href="./about.html">关于我</a></li>
+    </ul>
+</nav><!-- /.sidebar -->
