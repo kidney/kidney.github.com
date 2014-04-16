@@ -30,6 +30,11 @@
 
       @extend %white-box;
     }
+
+    .entry-meta {
+      margin: 50px 30px 30px;
+      text-align: center;
+    }
   }
 
   .entry-meta {
@@ -63,6 +68,49 @@
       margin-left: -26px;
       border-left-width: 8px;
       font-style: italic;
+    }
+  }
+
+  .entry-tags {
+    margin-bottom: 6px;
+
+    .tag {
+      display: inline-block;
+      padding: 2px 6px;
+      margin: 4px;
+      color: #fff;
+      background-color: #bbb;
+      @include border-radius(3px);
+
+      &:hover {
+        color: #fff;
+        background-color: #a2a2a2;
+      }
+      &:active {
+        @include transform(translate(0, 1px));
+        @include box-shadow(0 0 1px rgba(#222, 0.2));
+      }
+
+      span {
+        font-size: 10px;
+        font-size: 1.0rem;
+        vertical-align: super
+      }
+    }
+  }
+
+  .socialcount {
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+
+    li {
+      padding-right: 10px;
+      padding-left: 10px
+    }
+
+    p > a, li > a {
+      border-bottom-width: 0
     }
   }
 
