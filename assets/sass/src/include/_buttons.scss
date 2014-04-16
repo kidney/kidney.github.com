@@ -1,0 +1,135 @@
+#{$button-namespace} {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-weight: $button-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+
+  @include button-size($button-line-height, $button-padding, $button-font-size, $button-border-radius);
+
+  @include user-select(none);
+
+  &,
+  &:active,
+  &.active {
+    &:focus {
+      @include tab-focus();
+    }
+  }
+
+  &:hover,
+  &:focus {
+    //color: $btn-default-color;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+    @include opacity(.65);
+    @include box-shadow(none);
+  }
+}
+
+// --------------------------------------------------
+// color
+// --------------------------------------------------
+@each $btn-variant in $button-variant {
+  $btn-name: map-get($btn-variant, "name");
+
+  #{$button-namespace}-#{$btn-name} {
+    // normal
+    $btn-normal: map-get($btn-variant, "normal");
+
+    $normal-txt-color: map-get($btn-normal, "txt");
+    $normal-background-color: map-get($btn-normal, "background");
+    $normal-border-color: map-get($btn-normal, "border");
+    @include button-variant($normal-txt-color, $normal-background-color, $normal-border-color);
+
+    // hover
+    $btn-hover: map-get($btn-variant, "hover");
+    @if $btn-hover {
+      &:hover,
+      &.hover {
+        $hover-txt-color: map-get($btn-hover, "txt");
+        $hover-background-color: map-get($btn-hover, "background");
+        $hover-border-color: map-get($btn-hover, "border");
+        @include button-variant($hover-txt-color, $hover-background-color, $hover-border-color);
+      }
+    }
+    // active
+    $btn-active: map-get($btn-variant, "active");
+    @if $btn-active {
+      &:active,
+      &.active {
+        $active-txt-color: map-get($btn-active, "txt");
+        $active-background-color: map-get($btn-active, "background");
+        $active-border-color: map-get($btn-active, "border");
+        @include button-variant($active-txt-color, $active-background-color, $active-border-color);
+      }
+    }
+    // focus
+    $btn-focus: map-get($btn-variant, "focus");
+    @if $btn-focus {
+      &:focus,
+      &.focus {
+        $focus-txt-color: map-get($btn-focus, "txt");
+        $focus-background-color: map-get($btn-focus, "background");
+        $focus-border-color: map-get($btn-focus, "border");
+        @include button-variant($focus-txt-color, $focus-background-color, $focus-border-color);
+      }
+    }
+
+    // disabled
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+      &,
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        @include button-variant($normal-txt-color, $normal-background-color, $normal-border-color);
+      }
+    }
+  }
+}
+
+
+// --------------------------------------------------
+// size
+// --------------------------------------------------
+@each $btn-size in $button-size {
+  $size: map-get($btn-size, "size");
+
+  // .ui-button-primary .ui-button-size-small etc.
+  #{$button-namespace}-size-#{$size} {
+    $line-height: map-get($btn-size, "line-height");
+    $padding: map-get($btn-size, "padding");
+    $font-size: map-get($btn-size, "font-size");
+    $border-radius: map-get($btn-size, "border-radius");
+
+    @include button-size($line-height, $padding, $font-size, $border-radius);
+  }
+}
+
+
+
+
+#{$button-namespace}-block {
+  display: block;
+  width: 100%;
+}

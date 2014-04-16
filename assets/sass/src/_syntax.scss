@@ -3,8 +3,7 @@
   font-size: 12px;
   font-size: 1.2rem;
   line-height: 2.1667;
-  //background: #272822;
-  @include border-radius(3px);
+  @include border-radius($border-radius-base);
 
   pre {
     position: relative;
@@ -81,3 +80,17 @@
 .highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
 .highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
 .highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
+
+
+.notice {
+  margin-top: 21px;
+  border: 1px solid #b5b5b5;
+  padding: 7px 14px;
+
+  font-size: 14px;
+  font-size: 1.4rem;
+  text-indent: 0;
+  background-color: #e8e8e8;
+
+  @include border-radius($border-radius-base);
+}

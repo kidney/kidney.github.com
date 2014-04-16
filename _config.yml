@@ -5,6 +5,8 @@ layouts: ./_layouts
 baseurl: 
 encoding: utf-8
 
+
+
 title: kidney's blog
 description: 
 disqus_shortname: kidneyleung
@@ -17,10 +19,6 @@ owner:
   weibo: http://weibo.com/kidneyleung
   github: http://github.com/kidney
   instagram: http://instagram.com/kidney
-
-
-# Amount of post to show on home page
-paginate: 5
 
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones

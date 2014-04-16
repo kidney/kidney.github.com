@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-@import "./include/common";
+@import "common";
+$base-nav-width: 250px;
 
 html, body {
   height: 100%;
@@ -11,18 +12,20 @@ body {
 
   color: #2c3e50;
   background-color: #f0f0f0;
+
+  //-webkit-backface-visibility: hidden;
 }
 
 ::-moz-selection {
   color: #222;
   text-shadow: none;
-  background-color: #c8c8c8
+  background-color: #c8c8c8;
 }
 
 ::selection {
   color: #222;
   text-shadow: none;
-  background-color: #c8c8c8
+  background-color: #c8c8c8;
 }
 
 #page-container {
@@ -34,12 +37,24 @@ body {
 
 #page {
   padding-left: $base-nav-width;
+
+  & > .footer {
+    padding: 32px 0;
+    text-align: center;
+    @include clearfix;
+
+    a {
+      color: #555;
+    }
+  }
 }
+
+
 
 @import "navigation";
 //@import "progress";
 @import "content";
-@import "code";
+//@import "code";
 @import "syntax";
 @import "images";
 @import "responsive";

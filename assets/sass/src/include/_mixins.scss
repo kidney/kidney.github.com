@@ -1,0 +1,185 @@
+// -------------------------
+// Button style
+// -------------------------
+@mixin button-variant($color, $background: null, $border: null) {
+  $color: unquote($color);
+  $background: unquote($background);
+  $border: unquote($border);
+
+  @if $border {
+    border-color: $border;
+  }
+
+  @if $background {
+    background: nth($background, 1);
+    @if length($background) == 3 {
+      $top-bgcolor: nth($background, 2);
+      $bottom-bgcolor: nth($background, 3);
+      @include background(linear-gradient(top, $top-bgcolor, $bottom-bgcolor));
+      @include filter-gradient($top-bgcolor, $bottom-bgcolor);
+    }
+  }
+
+  color: $color;
+}
+
+// -------------------------
+// Button sizes
+// -------------------------
+@mixin button-size($line-height: null, $padding: null,
+$font-size: null, $border-radius: null) {
+
+  $line-height: unquote($line-height);
+  $padding: unquote($padding);
+  $font-size: unquote($font-size);
+  $border-radius: unquote($border-radius);
+
+  @if $padding {
+    line-height: $line-height;
+  }
+
+  @if $padding {
+    padding: $padding;
+  }
+
+  @if $font-size {
+    font-size: $font-size;
+  }
+
+  @if $border-radius {
+    @include border-radius($border-radius);
+  }
+}
+
+
+// WebKit-style focus
+@mixin tab-focus() {
+  // Default
+  outline: thin dotted;
+  // WebKit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+// Center-align a block level element
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// CSS image replacement
+//
+// Heads up! v3 launched with with only `.hide-text()`, but per our pattern for
+// mixins being reused as classes with the same name, this doesn't hold up. As
+// of v3.0.1 we have added `.text-hide()` and deprecated `.hide-text()`. Note
+// that we cannot chain the mixins together in Less, so they are repeated.
+//
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+
+// Deprecated as of v3.0.1 (will be removed in v4)
+@mixin hide-text() {
+  font: #{0/0} a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+// New mixin to use as of v3.0.1
+@mixin text-hide() {
+  @include hide-text();
+}
+
+
+// Responsive utilities
+// -------------------------
+// More easily include all the states for responsive-utilities.less.
+// [converter] $parent hack
+@mixin responsive-visibility($parent) {
+  #{$parent} {
+    display: block !important;
+  }
+  table#{$parent}  { display: table; }
+  tr#{$parent}     { display: table-row !important; }
+  th#{$parent},
+  td#{$parent}     { display: table-cell !important; }
+}
+
+// [converter] $parent hack
+@mixin responsive-invisibility($parent) {
+  #{$parent} {
+    display: none !important;
+  }
+}
+
+
+// Responsive image
+//
+// Keep images from scaling beyond the width of their parents.
+
+@mixin img-responsive($display: block) {
+  display: $display;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+// Contextual backgrounds
+// -------------------------
+// [converter] $parent hack
+@mixin bg-variant($parent, $color, $color-hover: null) {
+  @if $color-hover == null {
+    $color-hover: darken($color, 10%);
+  }
+
+  #{$parent} {
+    background-color: $color;
+  }
+  a#{$parent}:hover {
+    background-color: $color-hover;
+  }
+}
+
+// Typography
+// -------------------------
+// [converter] $parent hack
+@mixin text-emphasis-variant($parent, $color, $color-hover: null) {
+  @if $color-hover == null {
+    $color-hover: darken($color, 10%);
+  }
+
+  #{$parent} {
+    color: $color;
+  }
+  a#{$parent}:hover {
+    color: $color-hover;
+  }
+}
+
+
+// Tables
+// -------------------------
+@mixin table-row-variant($state, $background) {
+  // Exact selectors below required to override `.table-striped` and prevent
+  // inheritance to nested tables.
+  .table > thead > tr,
+  .table > tbody > tr,
+  .table > tfoot > tr {
+    > td.#{$state},
+    > th.#{$state},
+    &.#{$state} > td,
+    &.#{$state} > th {
+      background-color: $background;
+    }
+  }
+
+  // Hover states for `.table-hover`
+  // Note: this is not available for cells or rows within `thead` or `tfoot`.
+  .table-hover > tbody > tr {
+    > td.#{$state}:hover,
+    > th.#{$state}:hover,
+    &.#{$state}:hover > td,
+    &.#{$state}:hover > th {
+      background-color: darken($background, 5%);
+    }
+  }
+}
