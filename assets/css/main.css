@@ -3684,7 +3684,7 @@ body {
   padding-top: 50px;
 }
 /* line 11, ../sass/src/_content.scss */
-.main-container > article.post, .main-container > article.post-single .entry-content, .main-container .read-more {
+.main-container > article.post, .main-container > article.post-single .entry-content, .main-container > article.post-single #disqus_thread, .main-container .read-more {
   background-color: #fff;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -3695,17 +3695,17 @@ body {
 }
 /* line 16, ../sass/src/_content.scss */
 .main-container > article.post {
-  padding: 50px 80px;
   margin-bottom: 30px;
+  padding: 50px 80px;
 }
 /* line 21, ../sass/src/_content.scss */
 .main-container > article.post .entry-content {
   margin-bottom: 26px;
 }
 /* line 27, ../sass/src/_content.scss */
-.main-container > article.post-single .entry-content {
-  padding: 50px 80px;
+.main-container > article.post-single .entry-content, .main-container > article.post-single #disqus_thread {
   margin: 50px auto 30px auto;
+  padding: 50px 80px;
 }
 /* line 34, ../sass/src/_content.scss */
 .main-container > article.post-single .entry-meta {
@@ -4374,13 +4374,13 @@ figcaption {
   }
   /* line 13, ../sass/src/_responsive.scss */
   .main-container > article.post {
-    padding: 25px 15px;
     margin-bottom: 20px;
+    padding: 25px 15px;
   }
   /* line 19, ../sass/src/_responsive.scss */
-  .main-container > article.post-single .entry-content {
-    padding: 10px 15px;
+  .main-container > article.post-single .entry-content, .main-container > article.post-single #disqus_thread {
     margin: 40px 2px 20px 2px;
+    padding: 10px 15px;
   }
   /* line 26, ../sass/src/_responsive.scss */
   .main-container .entry-content > blockquote {
@@ -4415,9 +4415,9 @@ figcaption {
     padding: 30px;
   }
   /* line 64, ../sass/src/_responsive.scss */
-  .main-container > article.post-single .entry-content {
-    padding: 20px 30px;
+  .main-container > article.post-single .entry-content, .main-container > article.post-single #disqus_thread {
     margin: 40px 10px 20px 10px;
+    padding: 20px 30px;
   }
   /* line 71, ../sass/src/_responsive.scss */
   .main-container .header-title h1 {

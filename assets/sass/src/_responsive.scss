@@ -11,14 +11,14 @@
     padding-top: 40px;
 
     & > article.post {
-      padding: 25px 15px;
       margin-bottom: 20px;
+      padding: 25px 15px;
     }
 
     & > article.post-single {
-      .entry-content {
-        padding: 10px 15px;
+      .entry-content, #disqus_thread {
         margin: 40px 2px 20px 2px;
+        padding: 10px 15px;
       }
     }
 
@@ -61,9 +61,9 @@
     }
 
     & > article.post-single {
-      .entry-content {
-        padding: 20px 30px;
+      .entry-content, #disqus_thread {
         margin: 40px 10px 20px 10px;
+        padding: 20px 30px;
       }
     }
 

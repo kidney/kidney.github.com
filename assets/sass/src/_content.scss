@@ -14,8 +14,8 @@
     @include box-shadow(0 0 0 0, 0 6px 12px rgba(#222, 0.1));
   }
   & > article.post {
-    padding: 50px 80px;
     margin-bottom: 30px;
+    padding: 50px 80px;
     @extend %white-box;
 
     .entry-content {
@@ -24,9 +24,9 @@
   }
 
   & > article.post-single {
-    .entry-content {
-      padding: 50px 80px;
+    .entry-content, #disqus_thread {
       margin: 50px auto 30px auto;
+      padding: 50px 80px;
 
       @extend %white-box;
     }
