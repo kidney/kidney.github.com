@@ -8,12 +8,23 @@
   padding-top: 50px;
   //padding: 30px 15px 0;
 
+  .inline-list {
+    padding-left: 0;
+    margin-left: 0;
+    list-style: none;
+
+    li {
+      display: inline;
+      list-style-type: none
+    }
+  }
+
   %white-box {
     background-color: #fff;
     @include border-radius(3px);
     @include box-shadow(0 0 0 0, 0 6px 12px rgba(#222, 0.1));
   }
-  & > article.post {
+  & > article {
     margin-bottom: 30px;
     padding: 50px 80px;
     @extend %white-box;
@@ -24,6 +35,12 @@
   }
 
   & > article.post-single {
+    margin-bottom: 0;
+    padding: 0;
+    background-color: transparent;
+    @include border-radius(none);
+    @include box-shadow(none);
+
     .entry-content, #disqus_thread {
       margin: 50px auto 30px auto;
       padding: 50px 80px;
@@ -47,7 +64,7 @@
     }
   }
 
-  .entry-title {
+  h1.entry-title {
     margin: 26px 0;
   }
 

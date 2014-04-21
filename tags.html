@@ -1,0 +1,42 @@
+---
+layout: page
+permalink: /tags/
+title: 标签归档
+description: "An archive of posts sorted by tag."
+---
+
+<div class="entry-meta">
+<ul class="entry-tags inline-list">
+{% assign tags_list = site.tags %}
+
+{% if tags_list.first[0] == null %}
+    {% for tag in tags_list %}
+    <li><a href="#{{ tag }}" class="tag">{{ tag }} <sup>{{ site.tags[tag].size }}</sup></a></li>
+    {% endfor %}
+{% else %}
+    {% for tag in tags_list %}
+    <li><a href="#{{ tag[0] }}" class="tag">{{ tag[0] }} <sup>{{ tag[1].size }}</sup></a></li>
+    {% endfor %}
+{% endif %}
+
+{% assign tags_list = nil %}
+</ul>
+</div>
+        
+{% for tag in site.tags %}
+<article id="{{ tag[0] }}">
+    <h2>{{ tag[0] }}</h2>
+    <ul>
+{% assign pages_list = tag[1] %}
+        {% for post in pages_list %}
+        {% if post.title != null %}
+        {% if group == null or group == post.group %}
+        <li class="entry-title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        {% assign pages_list = nil %}
+{% assign group = nil %}
+    </ul>
+</article>
+{% endfor %}
