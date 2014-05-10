@@ -46,19 +46,31 @@
       font-weight: 200;
       color: #9c9c9c;
       @include text-shadow(1px 1px #fff);
+
+      &.active {
+        a {
+          @extend %handle-active;
+        }
+      }
     }
 
     a {
       display: block;
       font-size: 18px;
       line-height: 40px;
-      @include link-colors(#999, #000);
+
+      color: #999;
       @include transition(all .2s ease 0);
 
       &:hover {
+        @extend %handle-active;
+      }
+    }
+
+    %handle-active {
+        color: #000;
         background: #fff;
         text-decoration: none;
-      }
     }
   }
 }

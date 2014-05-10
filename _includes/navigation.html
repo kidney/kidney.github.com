@@ -9,8 +9,12 @@
     {% if site.description %}<h4 class="description">{{ site.description }}</h4>{% endif %}
     <hr>
     <ul class="menu">
-        <li><a href="{{ site.url }}/archive">归档</a></li>
-        <li><a href="{{ site.url }}/tags">标签</a></li>
-        <li><a href="{{ site.url }}/about">关于我</a></li>
+        {% for link in site.nav %}
+        {% assign activeStyle = nil %}
+        {% if page.url == link.url%}
+            {% assign activeStyle = ' class="active"' %}
+        {% endif %}
+        <li{{ activeStyle }}><a href="{{ link.url }}">{{ link.text }}</a></li>
+        {% endfor %}
     </ul>
 </nav><!-- /.sidebar -->

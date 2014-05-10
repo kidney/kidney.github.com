@@ -3654,24 +3654,21 @@ body {
   color: #9c9c9c;
   text-shadow: 1px 1px white;
 }
-/* line 51, ../sass/src/_navigation.scss */
+/* line 57, ../sass/src/_navigation.scss */
 .sidebar .menu a {
   display: block;
   font-size: 18px;
   line-height: 40px;
-  color: #999999;
+  color: #999;
   -moz-transition: all 0.2s ease 0;
   -o-transition: all 0.2s ease 0;
   -webkit-transition: all 0.2s ease;
   -webkit-transition-delay: 0;
   transition: all 0.2s ease 0;
 }
-/* line 24, ../../../../.rvm/gems/ruby-2.0.0-p451/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/typography/links/_link-colors.scss */
-.sidebar .menu a:hover {
-  color: black;
-}
-/* line 58, ../sass/src/_navigation.scss */
-.sidebar .menu a:hover {
+/* line 70, ../sass/src/_navigation.scss */
+.sidebar .menu > li.active a, .sidebar .menu a:hover {
+  color: #000;
   background: #fff;
   text-decoration: none;
 }

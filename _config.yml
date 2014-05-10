@@ -16,10 +16,20 @@ disqus_shortname: kidneyleung
 owner:
   name: kidney
   author: kidney leung
-  email: kidneyleung@gmail.com
+  email: kidneyleung@me.com
   weibo: http://weibo.com/kidneyleung
   github: http://github.com/kidney
   instagram: http://instagram.com/kidney
+
+
+#菜单配置
+nav:
+  - text: 归档
+    url: /archive/
+  - text: 标签
+    url: /tags/
+  - text: 关于我
+    url: /about/
 
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
