@@ -19,30 +19,21 @@ module.exports = function(grunt) {
                 sassDir: 'src',
                 require: 'bootstrap-sass'
             },
+
             build: {
                 options: {
-                    httpPath: 'http://www.poco.cn/css_common/',
-                    httpImagesPath: 'http://www.poco.cn/css_common/v3/images/',
-                    httpGeneratedImagesPath: 'http://www.poco.cn/css_common/v3/images/',
-
-                    imagesDir: '../images/',
-                    httpFontsDir: 'fonts/',
-
-                    generatedImagesDir: 'dist/images/',
-
-                    cssDir: buildCacheDir
-                }
-            },
-            dev: {
-                options: {
                     noLineComments: false,
-                    outputStyle: 'expanded',
+                    //outputStyle: 'expanded',
 
                     httpPath: './',
 
+                    httpImagesPath: '../images',
                     imagesDir: '../images', // css中图片路径
                     generatedImagesDir: '../images', // 生成图片的存档位置
+
+                    httpFontsDir: '../fonts',
                     fontsDir: '../fonts', // css中字体路径
+
                     cssDir: '../css'
                 }
             }
@@ -86,8 +77,8 @@ module.exports = function(grunt) {
         if (targetPath) {
 
             grunt.log.ok('主编译文件: "' + targetPath + '" 准备编译.');
-            grunt.config.set('compass.dev.options.specify', [targetPath]);
-            grunt.task.run('compass:dev');
+            grunt.config.set('compass.build.options.specify', [targetPath]);
+            grunt.task.run('compass:build');
         } else {
             grunt.log.error('"' + filePath + '" 找不到主编译文件.');
         }

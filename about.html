@@ -2,9 +2,27 @@
 layout: page
 permalink: /about/
 title: 关于我
-description: "An archive of posts sorted by tag."
 ---
 
-<article>
-    <figure></figure>
-</article>
+
+{% highlight javascript %}
+{
+    nickName: 'kidney',
+    fullName: '梁景贤',
+    birth: new Date('1987-05-19'),
+    title: '前端开发工程师',
+    skills: ['javascript', 'css', 'html', 'php', 'thinking'],
+    interest: ['想东想西', '篮球', '旅游', '摄影'],
+    contact: {
+        email: '{{ site.owner.email}}',
+        qq: '{{ site.owner.qq }}',
+        weibo: '{{ site.owner.weibo }}'
+    },
+    workExperience: [
+        'present': {
+            name: '广州数联软件技术有限公司',
+            site: 'http://www.poco.cn/'
+        }
+    ]
+}
+{% endhighlight %}
