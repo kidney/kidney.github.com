@@ -73,7 +73,7 @@ module.exports = function(grunt) {
         grunt.log.ok('"' + filePath + '" 内容发生变化，开始寻找主编译文件.');
 
         //var targetPath = getCompileFile(filePath);
-        var targetPath = 'src/main.scss';
+        var targetPath = 'src/page.scss';
         if (targetPath) {
 
             grunt.log.ok('主编译文件: "' + targetPath + '" 准备编译.');
