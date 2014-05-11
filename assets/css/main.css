@@ -3641,12 +3641,54 @@ body {
   color: #5d5f67;
 }
 /* line 38, ../sass/src/_navigation.scss */
+.sidebar .follow {
+  display: -moz-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+}
+/* line 47, ../sass/src/_navigation.scss */
+.sidebar .follow > li {
+  display: -moz-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+/* line 56, ../sass/src/_navigation.scss */
+.sidebar .follow a {
+  display: block;
+  margin-right: 10px;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  background: #f8f8f8;
+  font-size: 22px;
+  border-radius: 60px;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  color: #999;
+}
+/* line 75, ../sass/src/_navigation.scss */
+.sidebar .follow a:hover {
+  color: #000;
+  background: #fff;
+  text-decoration: none;
+}
+/* line 83, ../sass/src/_navigation.scss */
 .sidebar .menu {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 43, ../sass/src/_navigation.scss */
+/* line 88, ../sass/src/_navigation.scss */
 .sidebar .menu > li {
   margin: 10px 0;
   text-indent: 40px;
@@ -3654,7 +3696,7 @@ body {
   color: #9c9c9c;
   text-shadow: 1px 1px white;
 }
-/* line 57, ../sass/src/_navigation.scss */
+/* line 102, ../sass/src/_navigation.scss */
 .sidebar .menu a {
   display: block;
   font-size: 18px;
@@ -3666,11 +3708,39 @@ body {
   -webkit-transition-delay: 0;
   transition: all 0.2s ease 0;
 }
-/* line 70, ../sass/src/_navigation.scss */
+/* line 115, ../sass/src/_navigation.scss */
 .sidebar .menu > li.active a, .sidebar .menu a:hover {
   color: #000;
   background: #fff;
   text-decoration: none;
+}
+/* line 122, ../sass/src/_navigation.scss */
+.sidebar #J-back-top {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  font-size: 32px;
+  visibility: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transition: opacity 0.5;
+  -o-transition: opacity 0.5;
+  -webkit-transition: opacity 0.5;
+  transition: opacity 0.5;
+}
+/* line 133, ../sass/src/_navigation.scss */
+.sidebar #J-back-top a {
+  color: black;
+}
+/* line 24, ../../../../.rvm/gems/ruby-2.0.0-p451/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/typography/links/_link-colors.scss */
+.sidebar #J-back-top a:hover {
+  color: #999999;
+}
+/* line 137, ../sass/src/_navigation.scss */
+.sidebar #J-back-top.show {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  visibility: visible;
 }
 
 /* line 2, ../sass/src/_content.scss */
