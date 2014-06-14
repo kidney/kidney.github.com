@@ -33,7 +33,7 @@
         {% if page.url == link.url%}
             {% assign activeStyle = ' class="active"' %}
         {% endif %}
-        <li{{ activeStyle }}><a href="{{ link.url }}">{{ link.text }}</a></li>
+        <li{{ activeStyle }}><a href="{{ link.url }}" data-role="ignore">{{ link.text }}</a></li>
         {% endfor %}
     </ul>
 

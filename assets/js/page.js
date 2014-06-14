@@ -11,12 +11,11 @@ define('page', ['$'], function(require, exports, module) {
             $backTop.toggleClass('show', scrollTop > 100);
         });
 
-
-        $('#page').on('click', '[data-role]', function(event) {
+        var handleEvent = function(event) {
             var $target = $(event.currentTarget);
             var role = $target.attr('data-role');
 
-            if (!role) {
+            if (!role || role == 'ignore') {
                 return;
             }
 
@@ -24,7 +23,7 @@ define('page', ['$'], function(require, exports, module) {
 
             switch (role) {
                 case 'navbar-toggle':
-                    var $nav = $('#page').find('[data-role=navbar-collapse]');
+                    var $nav = $page.find('[data-role=navbar-collapse]');
                     $nav.length && $nav.toggleClass('show');
                     break;
                 case 'go-top':
@@ -33,7 +32,11 @@ define('page', ['$'], function(require, exports, module) {
                     }, 800);
                     break;
             }
-        });
+        };
+
+        var $page = $('#page');
+        $page.on('click', 'a[data-role=go-top]', handleEvent);
+        $page.on('click', 'button[data-role=navbar-toggle]', handleEvent);
     }
 
     $(document).ready(pageInit);
