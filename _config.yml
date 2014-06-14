@@ -3,7 +3,7 @@ destination: ./_site
 plugins: ./_plugins
 layouts: ./_layouts
 baseurl:
-url: http://localhost:4000
+url: http://kidney.github.com
 encoding: utf-8
 
 
