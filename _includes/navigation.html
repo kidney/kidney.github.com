@@ -2,14 +2,14 @@
 <nav class="navbar navbar-default visible-xs">
     <header>
         <h1>{{ site.title }}</h1>
-        <button type="button" class="navbar-toggle" data-toggle="collapse">
+        <button type="button" class="navbar-toggle" data-role="navbar-toggle">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
     </header>
-    <ul class="navbar-collapse">
+    <ul class="navbar-collapse" data-role="navbar-collapse">
         {% for link in site.nav %}
         {% assign activeStyle = nil %}
         {% if page.url == link.url%}
