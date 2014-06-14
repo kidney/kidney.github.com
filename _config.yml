@@ -3,7 +3,7 @@ destination: ./_site
 plugins: ./_plugins
 layouts: ./_layouts
 baseurl:
-url: http://kidney.github.com
+url: http://kidney.github.io
 encoding: utf-8
 
 
