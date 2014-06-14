@@ -1,6 +1,23 @@
 <!-- nav -->
 <nav class="navbar navbar-default visible-xs">
-	<h1>{{ site.title }}</h1>
+    <header>
+        <h1>{{ site.title }}</h1>
+        <button type="button" class="navbar-toggle" data-toggle="collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </header>
+    <ul class="navbar-collapse show">
+        {% for link in site.nav %}
+        {% assign activeStyle = nil %}
+        {% if page.url == link.url%}
+        {% assign activeStyle = ' class="active"' %}
+        {% endif %}
+        <li{{ activeStyle }}><a href="{{ link.url }}">{{ link.text }}</a></li>
+        {% endfor %}
+    </ul>
 </nav><!-- /.navbar -->
 
 <!-- sidebar -->
