@@ -20,10 +20,16 @@ define('page', ['$'], function(require, exports, module) {
         });
 
         $('#page').on('click', '[data-role]', function(event) {
+            var $target = $(event.currentTarget);
+            var role = $target.attr('data-role');
+
+            if (!role) {
+                return;
+            }
+
             event.preventDefault();
 
-            var $target = $(event.currentTarget);
-            if ($target.attr('data-role') == 'navbar-toggle') {
+            if (role == 'navbar-toggle') {
                 var $nav = $('#page').find('[data-role=navbar-collapse]');
                 $nav.length && $nav.toggleClass('show');
             }
