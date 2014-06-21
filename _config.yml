@@ -3,7 +3,7 @@ destination: ./_site
 plugins: ./_plugins
 layouts: ./_layouts
 baseurl:
-url: /
+url: http://kidney.xyz/
 encoding: utf-8
 
 
