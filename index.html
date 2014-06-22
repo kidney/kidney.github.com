@@ -41,14 +41,13 @@ layout: page
 <div class="ui-pager">
 {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
-    <a href="{{ site.url }}" class="ui-pager-prev">&larr; Newer</a>
+    <a href="{{ site.url }}" class="ui-pager-prev">&larr; 较新的文章</a>
     {% else %}
-    <a href="{{ site.url }}/page{{ paginator.previous_page }}" class="ui-pager-prev">&larr;
-        Newer</a>
+    <a href="{{ site.url }}/page{{ paginator.previous_page }}" class="ui-pager-prev">&larr; 较新的文章</a>
     {% endif %}
 {% endif %}
 
 {% if paginator.next_page %}
-    <a href="{{ site.url }}/page{{ paginator.next_page }}" class="ui-pager-next">Older &rarr;</a>
+    <a href="{{ site.url }}/page{{ paginator.next_page }}" class="ui-pager-next">较旧的文章 &rarr;</a>
 {% endif %}
 </div><!-- /.ui-pager -->
