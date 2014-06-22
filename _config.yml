@@ -3,7 +3,7 @@ destination: ./_site
 plugins: ./_plugins
 layouts: ./_layouts
 baseurl:
-url: http://kidney.xyz/
+url: http://kidney.xyz
 encoding: utf-8
 
 
@@ -54,7 +54,7 @@ kramdown:
     coderay_css: class
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   :categories/:title/
+permalink:   /:categories/:title/
 
 # Amount of post to show on home page
 paginate: 5
