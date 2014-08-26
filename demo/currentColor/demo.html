@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            color: #f00;
+        }
+        div {
+            position: relative;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+        div:before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: currentColor;
+        }
+        
+        .border {
+            border: 2px solid currentColor;
+        }
+        .box-shadow {
+            box-shadow: 1px 1px 5px currentColor;
+        }
+        .text-shadow {
+            font-size: 20px;
+            text-shadow: 5px 5px 1px currentColor;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <labe>颜色值：<input type="color" id="J-color-input"></labe>
+        <button type="button" id="J-submit">Change!</button>
+    </p>
+
+    <div class="border box-shadow">
+        <span class="text-shadow">box-shadow</span>
+    </div>
+
+<script>
+    (function() {
+        var $submit = document.getElementById('J-submit');
+        var $color = document.getElementById('J-color-input');
+        $submit.onclick = function() {
+            document.body.style.color = $color.value;
+        };
+    })();
+</script>
+</body>
+</html>
