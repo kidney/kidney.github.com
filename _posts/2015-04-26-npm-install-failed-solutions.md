@@ -10,17 +10,17 @@ comments: true
 
 可以更改registry的值改为国内一些npm镜像，这里推荐A厂taobao车间：[https://npm.taobao.org](https://npm.taobao.org)
 
-##命令行使用config命令修改npm配置
+###命令行使用config命令修改npm配置（一劳永逸）
 {% highlight bash %}
 npm config set registry https://registry.npm.taobao.org/
 {% endhighlight %}
 
-##临时工最爱
+###临时工最爱
 {% highlight bash %}
 npm install bower --registry=https://registry.npm.taobao.org/
 {% endhighlight %}
 
-##颜值爆表就是不改
+###颜值爆表就是不改
 能连上，但安装失败时，可尝试清除一下缓存再安装
 {% highlight bash %}
 npm cache clean
