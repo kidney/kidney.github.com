@@ -5,7 +5,7 @@ layouts: ./_layouts
 baseurl:
 url: http://kidney.xyz
 encoding: utf-8
-
+highlighter: rouge
 
 
 title: kidney's blog
