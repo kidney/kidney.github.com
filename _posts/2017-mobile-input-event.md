@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 移动端坑 input[type="text"] event
-description: "移动端坑,input[type=text],input,compositionstart,compositionend"
+description: "移动端坑,input text,input,compositionstart,compositionend,ime"
 tags: [IME, 移动端坑, compositionend]
 comments: true
 ---
