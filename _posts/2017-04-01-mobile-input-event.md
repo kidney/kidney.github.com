@@ -60,7 +60,7 @@ inputs.on('focus', function () {
 ```
 
 
-`this.select();` 实现聚焦时全选input中的文字，实现方式不对，后面分解，删除就解决重复出现，Why？
+`this.select();` 希望聚焦时全选input中的文字，删除就解决重复出现，Why？
 
 
 > 调用 element.select() 并不一定会使得该 input 元素获得焦点
