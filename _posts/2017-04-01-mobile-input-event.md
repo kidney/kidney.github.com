@@ -73,7 +73,7 @@ inputs.on('focus', function () {
 
 
 ### 动作分解：
- 1. 输入完毕，点击另外一个input（这是常见的用户操作流程）
+ 1. 输入完毕，点击 `input-2`（这是常见的用户操作流程）
  2. `input-1` 触发 `blur` 事件
  3. `input-2` 触发 `focus` 事件
  4. ios的中文输入框候选字（Input Method Editor模式）注入 `input-1` 
