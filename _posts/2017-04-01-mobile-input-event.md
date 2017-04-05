@@ -106,7 +106,7 @@ function formatString(s) {
 var inputTimer, IMELocked = false;
 var $input = $('.J-lastname-py-input');
 $input.on('compositionstart', function () {
-    IMELocked = true;
+    IMELocked = true;
     $input.one('compositionend', function () {
         IMELocked = false;
         var that = this;
@@ -115,7 +115,7 @@ $input.on('compositionstart', function () {
             that = null;
         }, 0);
     });
-}).on('input', function () {
+}).on('input', function () { // 兼容非IME模式
     if (!IMELocked) {
         var that = this;
         clearTimeout(inputTimer);
